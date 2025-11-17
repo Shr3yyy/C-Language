@@ -1,2 +1,3 @@
 # C-Language
-Every code I learn
+Every code I type in C lang in learning phase
+
