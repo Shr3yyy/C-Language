@@ -1,3 +1,3 @@
-# C-Language
-Every code I type in C lang in learning phase
+# Hackerrank Snippets
+Every code I type in 
 
