@@ -5,8 +5,8 @@ int main() {
     int i;
     scanf("%lld %d", &n, &i);
 
-    long long result = (n >> i) & 1;
-    printf("%lld", result);
+    long long bit = (n >> i) & 1;
+    printf("%lld", bit);
 
     return 0;
 }
