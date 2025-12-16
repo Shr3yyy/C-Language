@@ -1,77 +1,58 @@
-#include <stdio.h>
-
+#include<stdio.h>
 int main() {
     int n;
-    scanf("%d", &n);
-    if (n == 0) {
+    scanf("%d",&n);
+    if(n==0){
         printf("Circle");
-        return 0;
     }
-    if (n == 3) {
-        double a, b, c;
-        int A, B, C;
-        scanf("%lf %lf %lf %d %d %d", &a, &b, &c, &A, &B, &C);
-        if (a <= 0 || b <= 0 || c <= 0) {
-            printf("Invalid Figure");
-            return 0;
+    
+    
+    else if(n==3){
+        int a,b,c;
+        int A,B,C;
+        scanf("%d %d %d %d %d %d",&a,&b,&c,&A,&B,&C);
+        if(a<=0||A<=0||b<=0||B<=0||c<=0||C<=0||A+B+C!=180|| a + b <= c || a + c <= b || b + c <= a){
+           printf("Invalid Figure");
         }
-        if (A <= 0 || B <= 0 || C <= 0) {
-            printf("Invalid Figure");
-            return 0;
-        }
-        if (A + B + C != 180) {
-            printf("Invalid Figure");
-            return 0;
-        }
-        if (a == b && b == c && A == 60 && B == 60 && C == 60) {
+        else if (a==b && b==c && c==a && A ==60 && B==60 && C==60){
             printf("Equilateral Triangle");
         }
-        else if ((a == b && A == B) ||
-                 (b == c && B == C) ||
-                 (a == c && A == C)) {
+        else if((a==b && A==B && c!=a && A!=C) ||(a==c && A==C && b!=a && B!=A)||(c==b && C==B && a!=c && A!=C)){
             printf("Isosceles Triangle");
         }
-        else {
+        else if (a != b && b != c && a != c && A != B && B != C && A != C) {
             printf("Scalene Triangle");
         }
-    }
-    else if (n == 4) {
-        double a, b, c, d;
-        int A, B, C, D;
-        scanf("%lf %lf %lf %lf %d %d %d %d", &a, &b, &c, &d, &A, &B, &C, &D);
-        if (a <= 0 || b <= 0 || c <= 0 || d <= 0) {
-            printf("Invalid Figure");
-            return 0;
-        }
-        if (A <= 0 || B <= 0 || C <= 0 || D <= 0) {
-            printf("Invalid Figure");
-            return 0;
-        }
-        if (A + B + C + D != 360) {
-            printf("Invalid Figure");
-            return 0;
-        }
-        int all90 = (A == 90 && B == 90 && C == 90 && D == 90);
-        if (a == b && b == c && c == d && all90) {
-            printf("Square");
-        }
-        else if (a == c && b == d && all90) {
-            printf("Rectangle");
-        }
-        else if (a == b && b == c && c == d && !(all90) &&
-                 (A == C && B == D)) {
-            printf("Rhombus");
-        }
-        else if (a == c && b == d &&
-                 (A == C && B == D)) {
-            printf("Parallelogram");
-        }
-        else {
+        else{
             printf("Invalid Figure");
         }
     }
+    else if(n==4){
+        int a,b,c,d;
+        int A,B,C,D;
+        scanf("%d %d %d %d %d %d %d %d",&a,&b,&c,&d,&A,&B,&C,&D);
+           if(a<=0||A<=0||b<=0||B<=0||c<=0||C<=0||d<=0||D<=0||A+B+C+D!=360){
+               printf("Invalid Figure");
+           }
+           else if(a==b && b==c && c==d && A==90 && B==90 && C==90 && D==90){
+               printf("Square");
+           }
+           else if(a==c && b==d && A==90 && B==90 && C==90 && D==90){
+               printf("Rectangle");
+           }
+           else if(a==b && b==c && c==d && A==C && B==D && A!=B){
+               printf("Rhombus");
+           }
+           else if(a==c && b==d && a!=b && A==C && B==D && A!=B){
+               printf("Parallelogram");
+           }
+           else{
+               printf("Invalid Figure");
+           }
+    
+     }
     else {
-        printf("Invalid Figure");
+         printf("Invalid Figure");
     }
     return 0;
 }
